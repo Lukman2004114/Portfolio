@@ -1,0 +1,722 @@
+# Lukman Al Afandi — Personal Portfolio Website
+## Complete Build Brief
+**Project type:** Personal cybersecurity portfolio — student, job seeker, CTF enthusiast
+**Tagline:** *"Breaking things to build them stronger."*
+**Status:** Built. Use this brief to rebuild, hand off, or upgrade.
+
+---
+
+## 1. CONCEPT OVERVIEW
+
+**What is it?**
+A personal portfolio website for Lukman Al Afandi — a Cybersecurity student at Gannon University (Class of 2030) in Erie, PA. The site is a professional landing page designed to impress recruiters, professors, and potential collaborators. It showcases who Lukman is, what he knows, and what he has built.
+
+**The audience:**
+- Recruiters and hiring managers at cybersecurity firms
+- Internship coordinators
+- Professors and academic connections
+- Fellow students and CTF community members
+- Anyone who Googles his name
+
+**The goal:**
+When someone visits, they should immediately understand:
+1. Who Lukman is and where he studies
+2. What areas of cybersecurity he specializes in
+3. What he has actually built and done
+4. How to contact him or download his resume
+
+**The feel:**
+Professional but not corporate. Technical but not cold. It should feel like a developer who takes their craft seriously — someone who built a home lab for fun, not because they had to. The hacker-terminal aesthetic runs throughout: boot screen, decrypt animations, typing effects, matrix green dark mode.
+
+---
+
+## 2. PERSONAL INFORMATION
+
+| Field | Value |
+|-------|-------|
+| **Name** | Lukman Al Afandi |
+| **Title** | Cybersecurity Student |
+| **University** | Gannon University, Erie, PA |
+| **Graduation** | Class of 2030 |
+| **Email** | luqmanalafande@gmail.com |
+| **GitHub** | github.com/Lukman2004114 |
+| **LinkedIn** | linkedin.com/in/lukman-al-afandi-2539123b3 |
+| **TryHackMe** | tryhackme.com/p/luqmanalafande |
+| **Logo mark** | `<LA/>` — code-style initials in cyan brackets |
+
+---
+
+## 3. BRAND VOICE
+
+**Personality:** Technically sharp, curious, direct. Not arrogant — confident. Writes like a developer who knows what they're talking about but doesn't feel the need to prove it. Occasionally uses hacker culture references naturally, not as performance.
+
+**Tone:**
+| Dimension | Score | Notes |
+|-----------|-------|-------|
+| Formal ↔ Casual | 3/5 | Professional but human |
+| Serious ↔ Playful | 2.5/5 | Serious work, light touch |
+| Reserved ↔ Expressive | 3/5 | Clear and direct |
+| Technical ↔ Accessible | 3/5 | Technical terms used correctly, never jargon for jargon's sake |
+
+**Voice rules:**
+- First person always: "I built," "I'm studying," "I love" — never "this developer" or "Lukman has"
+- Active voice. Short sentences. Get to the point.
+- Technical terms are fine — this audience knows what Metasploit is
+- Don't oversell. "I'm learning X" is more credible than "I'm an expert in X" for a student
+- Curiosity is the core trait. Lead with it.
+
+**Words to use:** built, explored, breaking, secure, hands-on, practical, curious, challenge, lab, defense
+**Words to avoid:** passionate about (overused), world-class, expert, guru, ninja, leverage, synergy
+
+**Core messaging:**
+- **Headline:** "Lukman Al Afandi"
+- **Sub-role (typing effect, rotates):** Cybersecurity Student · Ethical Hacker · CTF Enthusiast · Network Defender · Penetration Tester
+- **Hero description:** "Passionate about ethical hacking, network defense, and building secure digital systems."
+- **About opening:** "I love breaking things apart to understand how they work — and then building them back stronger."
+- **Contact CTA:** "I'm always open to discussing cybersecurity projects, internship opportunities, or just talking about the latest vulnerabilities."
+
+---
+
+## 4. DESIGN SYSTEM
+
+### Color Palette
+
+**Light Mode (default):**
+
+| Role | Description | Hex |
+|------|-------------|-----|
+| Background | Sky-blue tint | `#f0f9ff` |
+| Background Alt | Soft cyan tint | `#e0f2fe` |
+| Card | Pure white | `#ffffff` |
+| Border | Cyan-300 | `#7dd3fc` |
+| **Accent (primary)** | Deep cyan — professional, cybersecurity-adjacent | `#0891b2` |
+| Accent Dim | Darker cyan for hover | `#0e7490` |
+| Accent Glow | Translucent cyan | `rgba(8, 145, 178, 0.12)` |
+| Text | Deep navy | `#0c1a2e` |
+| Text Muted | Dark cyan | `#0e4f6b` |
+| Text Dim | Sky blue | `#38bdf8` |
+
+**Dark Mode (toggle on):**
+
+| Role | Description | Hex |
+|------|-------------|-----|
+| Background | Near-black | `#080d08` |
+| Background Alt | Very dark | `#0c130c` |
+| Card | Dark surface | `#101810` |
+| Border | Dark green | `#1e331e` |
+| **Accent (primary)** | Matrix green — terminal, hacker aesthetic | `#4ade80` |
+| Accent Dim | Mid green | `#22c55e` |
+| Text | Light mint | `#e0fce8` |
+| Text Muted | Soft green | `#86efac` |
+
+**Why this combination:** Light mode uses cyan — the color associated with professional cybersecurity (Cloudflare, Palo Alto, CrowdStrike all use it). Dark mode uses matrix green — the universal "hacker terminal" visual language. Two modes, two personalities, both on-brand.
+
+**Accent gradients:**
+- Hero name gradient: `135deg, #0891b2 → #38bdf8 → #7c3aed` (cyan to purple)
+- Scroll progress bar: `#0891b2 → #38bdf8 → #7c3aed`
+- Skill card scan line: `#0891b2 → #38bdf8 → #7c3aed`
+
+### Typography
+
+| Role | Font | Size | Weight |
+|------|------|------|--------|
+| **All text** | Poppins (Google Fonts) | — | 300/400/500/600/700/800 |
+| Hero title | Poppins | `clamp(2.8rem, 8vw, 5.5rem)` | 800 |
+| Section titles | Poppins | `clamp(1.8rem, 4vw, 2.6rem)` | 700 |
+| Body | Poppins | 1rem (16px) | 400 |
+| Small labels | Poppins | 0.75rem | 600 |
+
+**Import:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+```
+
+### Spacing & Layout
+
+- **Container max-width:** 1100px
+- **Section padding:** 100px top/bottom desktop · 72px mobile
+- **Grid:** 12-col concept, implemented via CSS Grid per section
+- **Breakpoints:** 600px (mobile) · 900px (tablet)
+
+### Border Radius
+
+| Name | Value |
+|------|-------|
+| Default | 12px |
+| Large (cards) | 20px |
+| Pill (buttons, badges) | 9999px |
+
+### Elevation
+
+| Level | Value |
+|-------|-------|
+| Default shadow | `0 4px 24px rgba(8, 145, 178, 0.15)` |
+| Large shadow | `0 8px 48px rgba(8, 145, 178, 0.20)` |
+| Card hover | `0 12px 40px rgba(8, 145, 178, 0.20), 0 0 0 1px rgba(8, 145, 178, 0.35)` |
+
+### Visual Style
+
+**Direction:** Technical dark theme meets modern SaaS portfolio. Clean, grid-based, minimal decoration. All personality comes from the micro-animations and the dark mode terminal aesthetic — not from decorative elements.
+
+- Dot grid background on hero (subtle, 32px spacing)
+- Ambient radial glow behind hero content
+- Cards lift + tilt on hover (3D perspective on desktop)
+- No illustrations, no stock photos — the code speaks for itself
+
+---
+
+## 5. ANIMATIONS & INTERACTIONS
+
+All animations are built in vanilla JavaScript (no libraries). Every animation respects `prefers-reduced-motion` (not yet implemented — add this).
+
+### On Load
+
+**Boot Screen** (plays once per browser session):
+```
+[LA/]$ boot --portfolio --secure
+> Initializing modules...
+> Loading assets ............. [OK]
+> Establishing connection ..... [OK]
+> Running security checks ..... [OK]
+> Access granted. Welcome, visitor.
+```
+Terminal font, green text on near-black background. Fades out after ~3 seconds. Skipped on return visits (sessionStorage flag).
+
+**Page fade-in:** Body fades from opacity 0 → 1 over 0.6s on load.
+
+**Hero glitch effect:** The name "Al Afandi" runs a glitch animation once, 1.2s after load. Cyan + purple text-shadow displacement. Lasts 1.5s then stops.
+
+### On Scroll
+
+**Scroll reveal:** Every section element with `.reveal` fades in + rises 28px when it enters the viewport. Uses `IntersectionObserver` at threshold 0.12, with 48px root margin. Fires once only.
+
+**Stagger delays on cards:**
+- 1st card: 0ms · 2nd: 80ms · 3rd: 160ms · 4th: 240ms · 5th: 320ms · 6th: 400ms
+
+**Decrypt text:** Section headings with `.decrypt` class run a character-scramble animation when they enter view. Characters resolve left-to-right from a pool of `!<>-_\/[]{}—=+*^?#@$%ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`. Applied to: "My Skills" and "Recent Projects" headings.
+
+**Active nav link:** The navbar highlights the current section's link as you scroll (IntersectionObserver at threshold 0.4).
+
+**Scroll progress bar:** 3px bar at the very top of the page. Fills left-to-right as you scroll. Gradient: cyan → sky → purple. `z-index: 9999`.
+
+**Counter animation:** Stats (15+, 5+, 3+) count up from 0 when the About section scrolls into view. Eased with `easeOutQuad` over 1.6s.
+
+### On Hover (desktop only)
+
+**Card 3D tilt:** Project and skill cards tilt up to ±5° on X/Y axis based on mouse position within the card. `perspective(600px)`. Resets on `mouseleave`.
+
+**Skill card scan line:** A colored line sweeps top-to-bottom across skill cards on hover over 0.7s.
+
+**Project card shimmer:** A light gradient line sweeps left-to-right across the top edge of project cards on hover.
+
+**CTA buttons:** `translateY(-2px)` + shadow increase on hover, 0.3s.
+
+**Cursor glow (desktop):** A 300×300px radial gradient follows the cursor with a 0.18s lag. Cyan core, fades to transparent. Disappears after 1.2s of no movement.
+
+### Terminal Typing Effect
+
+The `.role-badge` in the hero cycles through 5 roles:
+1. Cybersecurity Student
+2. Ethical Hacker
+3. CTF Enthusiast
+4. Network Defender
+5. Penetration Tester
+
+Types at 85ms/char, deletes at 50ms/char. 2.4s pause when fully typed. Prefixed with `> ` terminal prompt. Blinking cursor `_`.
+
+### Dark Mode
+
+Toggle button in navbar (moon/sun icon). Preference saved to `localStorage`. Applies `data-theme="dark"` to `<html>`. Instant switch, no transition delay.
+
+---
+
+## 6. SECTIONS
+
+### Section order
+1. Hero
+2. About
+3. Skills
+4. Projects
+5. Contact
+6. Footer
+
+---
+
+### Section 1 — Hero
+
+**Layout:** Full viewport height. Centered content. Dot grid + ambient glow background.
+
+**Elements:**
+- Eyebrow text: "Hello, I'm"
+- H1: "Lukman" + "Al Afandi" (gradient text)
+- Role badge: terminal typing effect (see above)
+- Location line: pin icon + "Erie, PA — Gannon University"
+- Description: 1–2 lines
+- 2 CTA buttons: "View My Work" (primary, links to #projects) + "Get In Touch" (outline, links to #contact)
+- Scroll indicator: "Scroll to explore" + animated pulsing vertical line
+
+**Animations:** Reveal fade+rise on each element, staggered by natural DOM order.
+
+---
+
+### Section 2 — About
+
+**Layout:** 2-column grid — photo left (280px), text right. Collapses to single column on tablet.
+
+**Photo:** Circular avatar with animated dashed ring rotating slowly (20s, `#0891b2`). Photo uses `object-fit: cover, object-position: center top`.
+
+**Text content:**
+- Label: "About Me"
+- H2: "Hi, I'm Lukman. Nice to meet you."
+- Paragraph 1: Background, university, Class of 2030 badge, passion for ethical hacking and forensics
+- Paragraph 2: How he sharpens skills — CTF challenges, labs, research. Focus areas: Network Security, Web Exploitation, Malware Analysis, Cryptography
+- Stats row (3 items, counting animation):
+  - **15+** CTF Challenges
+  - **5+** Projects Built
+  - **3+** Certs Pursuing
+
+**"Class of 2030" badge:** Small inline pill badge, cyan background at 10% opacity, cyan border, cyan text. Sits inline within the first paragraph sentence.
+
+---
+
+### Section 3 — Skills
+
+**Layout:** 3-column grid of cards. 2-col on tablet, 1-col on mobile.
+
+**6 skill cards, each with:** Icon (SVG, 22×22px, cyan) · Title · Description · Tags (pill badges)
+
+| # | Skill | Icon | Tools shown |
+|---|-------|------|-------------|
+| 1 | Network Security | Shield | Wireshark · Nmap · TCP/IP |
+| 2 | Ethical Hacking | Monitor | Metasploit · Burp Suite · Kali Linux |
+| 3 | Scripting & Automation | Code brackets `</>` | Python · Bash · PowerShell |
+| 4 | Digital Forensics | Magnifying glass | Autopsy · Volatility · FTK |
+| 5 | Web Security | Cube/package | OWASP · SQLMap · DVWA |
+| 6 | Cryptography | Padlock | AES · RSA · Hash Cracking |
+
+**Card interactions:** Hover lifts card, renders scan line, applies 3D tilt.
+
+**Section heading "My Skills"** has decrypt animation on scroll-in.
+
+---
+
+### Section 4 — Projects
+
+**Layout:** 3-column grid of cards. 2-col tablet, 1-col mobile.
+
+**6 project cards, each with:** Project icon · GitHub link · External link · Title · Description · Tech tags
+
+| # | Project | Tags | Status |
+|---|---------|------|--------|
+| 1 | Network Scanner Tool | Python · Sockets · Scapy · CLI | Link to GitHub repo needed |
+| 2 | Phishing Detection System | Python · scikit-learn · NLP · Flask | Link to GitHub repo needed |
+| 3 | Password Strength Analyzer | JavaScript · HTML/CSS · Regex · Entropy | Link to GitHub repo needed |
+| 4 | CTF Write-up Blog | CTF · Write-ups · Web Exploit · RevEng | Link to blog needed |
+| 5 | Secure File Vault | Python · AES-256 · PBKDF2 · Tkinter | Link to GitHub repo needed |
+| 6 | Home Lab Setup ⭐ Featured | VirtualBox · pfSense · Kali · Metasploitable | No external link (local lab) |
+
+**Featured card** (Home Lab): Pink border tint, pink "Featured" badge top-right, pink icon accent.
+
+**Note to developer:** All external link icons currently point to `href="#"` — they need to be updated with actual repository or live URLs. Each project should link to its own specific repo, not the general GitHub profile.
+
+**Section heading "Recent Projects"** has decrypt animation on scroll-in.
+
+---
+
+### Section 5 — Contact
+
+**Layout:** Centered card. White background. Cyan accent line across the top edge.
+
+**Elements:**
+- Label: "Let's Connect"
+- H2: "Interested in collaborating?" (decrypt animation)
+- Description paragraph
+- Contact form (Name · Email · Message · Send button)
+- Social links row: GitHub · LinkedIn · TryHackMe
+
+**Contact form:**
+- Fields: Name (text, required) · Email (email, required) · Message (textarea, 5 rows, required)
+- Submit: "Send Message" button (primary style, large)
+- Submission: fetch POST to Formspree endpoint
+- Success state: green confirmation text under button
+- Error state: red error text with fallback email address
+
+**Formspree setup required:** Replace `YOUR_FORM_ID` in `app.js` with actual Formspree form ID. Sign up free at formspree.io.
+
+**Social link icons:**
+- GitHub — filled GitHub SVG icon
+- LinkedIn — filled LinkedIn SVG icon
+- TryHackMe — shield SVG icon (placeholder — ideally use THM's actual icon)
+
+---
+
+### Footer
+
+**Layout:** Single row, 3 items spread across. Stacks on mobile.
+
+- Left: `<LA/>` logo (links back to #hero)
+- Center: © [year] Lukman Al Afandi. All rights reserved. (year auto-updates via JS)
+- Right: "Made with ♥ and curiosity."
+
+---
+
+## 7. NAVBAR
+
+**Fixed** at top. Transparent until scrolled 40px, then frosted glass (`rgba(240, 249, 255, 0.92)` + `backdrop-filter: blur(12px)`).
+
+**Items:**
+- Left: `<LA/>` logo
+- Center: About · Skills · Projects · Contact
+- Right: Dark mode toggle (moon/sun icon) + hamburger (mobile)
+
+**Active state:** Cyan underline on current section's nav link (tracked by IntersectionObserver).
+
+**Mobile:** Hamburger button reveals full-height slide-in menu from the right (240px wide). Body scroll locked while open.
+
+---
+
+## 8. REFERENCE SITES (scraped with Firecrawl)
+
+Two reference sites were scraped at the start of the project to borrow design patterns.
+
+| Site | URL | What was borrowed |
+|------|-----|-------------------|
+| **Matt Farley** | mattfarley.ca | Overall section order, card layout structure, clean typography hierarchy, minimal decoration philosophy, about section grid (photo + text side by side) |
+| **Lusion** | lusion.co | Dot grid hero background, ambient radial glow, gradient accent text, shimmer line on card hover, scroll reveal animation style |
+
+**Proof in the code — `style.css` comments:**
+```css
+/* Lusion-inspired: subtle dot grid background */
+/* Lusion-inspired: ambient glow */
+/* Lusion-inspired: gradient accent text */
+/* Lusion-inspired: subtle shimmer line on hover */
+```
+
+**How each influenced the final design:**
+
+- **Matt Farley** → The site's bones. Clean, portfolio-standard layout: hero → about → skills → projects → contact. Card grids with tags. Simple footer. Nothing fancy structurally — but very professional and easy to navigate.
+- **Lusion** → The site's personality. The visual FX layer: animated dot grid, glowing background, shimmer effects, smooth scroll-reveal. Lusion is a high-end creative studio — borrowing their micro-animation language gave the portfolio an above-average feel without needing a 3D framework.
+
+---
+
+## 9. UI UX PRO MAX — Design System Audit
+
+Ran a full design system analysis against the portfolio. Here are the findings.
+
+### Style Direction Name
+**"Dark Mode OLED Portfolio with Terminal Aesthetic"**
+- High contrast, deep black, eye-friendly for night use
+- Best For: coding platforms, developer tools, hacker-culture portfolios, OLED devices
+- Performance: ⚡ Excellent | Accessibility: ✓ WCAG AAA capable
+
+### Font Upgrade Recommendation
+
+Current font (Poppins) is good but generic. UI UX Pro Max matched the portfolio to the **Developer Mono** pairing:
+
+| Role | Font | Why |
+|------|------|-----|
+| **Headings** | `JetBrains Mono` | Terminal/hacker feel, code-native, distinctive — perfect for a security portfolio |
+| **Body** | `IBM Plex Sans` | Professional, highly readable, developer-native at IBM |
+
+**CSS import to replace Poppins:**
+```css
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+```
+
+> Note: This is an upgrade suggestion, not a requirement. Poppins works fine. JetBrains Mono headings would push the hacker aesthetic further and make the portfolio more distinctive.
+
+### Color Validation
+
+UI UX Pro Max independently matched the dark mode palette to the **Cybersecurity Platform** preset — validating the existing color choices:
+
+| Role | Current hex | Preset hex | Match |
+|------|------------|------------|-------|
+| Primary / Accent | `#4ade80` | `#00FF41` | ✅ Matrix green — correct |
+| Background | `#080d08` | `#000000` | ✅ Near-black — correct |
+| Card surface | `#101810` | `#0C130E` | ✅ Dark card — correct |
+| Border | `#1e331e` | `#1F1F1F` | ✅ Subtle dark border — correct |
+
+Light mode uses cyan `#0891b2` — UI UX Pro Max classifies this as a professional developer/SaaS palette. No changes needed.
+
+### UX Issues Flagged
+
+These were identified as missing or incomplete:
+
+| Issue | Priority | Fix |
+|-------|----------|-----|
+| `prefers-reduced-motion` not honored | HIGH | Add `@media (prefers-reduced-motion: reduce)` to CSS — collapse all transforms to opacity-only at 200ms |
+| No visible focus rings on interactive elements | HIGH | Add 2px cyan focus ring with 2px offset on all buttons, links, inputs |
+| `cursor: pointer` missing on some clickable elements | MEDIUM | Add to skill cards and any div-based clickable elements |
+| Profile image has no `width`/`height` attributes | MEDIUM | Causes CLS (layout shift) — add explicit dimensions |
+| No `<main>` landmark wrapping sections | MEDIUM | Wrap all `<section>` elements in `<main>` for screen readers |
+| No skip-to-content link | LOW | Add hidden `<a href="#main">Skip to content</a>` at top of `<body>` |
+
+### Pre-Delivery Checklist (from UI UX Pro Max)
+
+- [ ] No emojis used as icons (SVG only) ✅ already done
+- [ ] `cursor: pointer` on all clickable elements — check skill/project cards
+- [ ] Hover states with smooth transitions 150–300ms ✅ already done
+- [ ] Light mode text contrast ≥ 4.5:1 — verify cyan `#0891b2` on white ✅ passes
+- [ ] Focus states visible for keyboard navigation ⬜ missing
+- [ ] `prefers-reduced-motion` respected ⬜ missing
+- [ ] Responsive tested at 375px, 768px, 1024px, 1440px ⬜ test needed
+
+---
+
+## 10. STITCH — Generated Section Layouts
+
+Stitch was used to generate two missing sections. A project and design system were created in Stitch with the following tokens:
+
+**Stitch Design System: "Lukman Portfolio Design System"**
+| Token | Value |
+|-------|-------|
+| Color mode | Dark |
+| Primary color | `#0891b2` (cyan) |
+| Secondary color | `#4ade80` (matrix green) |
+| Tertiary color | `#7c3aed` (purple) |
+| Headline font | Space Grotesk |
+| Body font | IBM Plex Sans |
+| Label font | Geist |
+| Roundness | 12px |
+
+### Generated Section 1 — Certifications
+
+**File:** `stitch-certifications.html` (saved in Web Mgt Design 01 folder)
+**Layout:** 2×2 card grid, dark `#080d08` background, Space Grotesk font
+
+| Card | Cert | Status | Visual |
+|------|------|--------|--------|
+| 1 | CompTIA Security+ | In Progress | Cyan progress bar at 60% |
+| 2 | CEH — Certified Ethical Hacker | In Progress | Cyan progress bar at 35% |
+| 3 | TryHackMe Top 1% | Earned ✅ | Solid green badge |
+| 4 | Google Cybersecurity Certificate | Earned ✅ | Solid green badge |
+
+**To use:** Open `stitch-certifications.html`, copy the `<section>` and its `<style>` block into `index.html` between the Skills and Projects sections.
+
+### Generated Section 2 — Education Timeline
+
+**File:** `stitch-timeline.html` (saved in Web Mgt Design 01 folder)
+**Layout:** Vertical timeline with cyan connector line
+
+| Field | Value |
+|-------|-------|
+| Institution | Gannon University |
+| Degree | B.S. Cybersecurity |
+| Location | Erie, PA |
+| Duration | 2022 – 2030 (Expected) |
+| Badge | "Class of 2030" green pill |
+| Courses listed | Network Security · Digital Forensics · Ethical Hacking · Cryptography |
+
+**To use:** Open `stitch-timeline.html`, copy the `<section>` and its `<style>` block into `index.html` between the About and Skills sections.
+
+---
+
+## 11. NANO BANANA 2 — Image Generation (Pending)
+
+`infsh` CLI was not installed on this machine. Images could not be generated. Install inference.sh and run the prompts below when ready.
+
+**Install:**
+```bash
+npm install -g inference-sh
+infsh login
+```
+
+**Image 1 — OG Social Card (16:9, 2K):**
+```bash
+infsh app run google/gemini-3-1-flash-image-preview --input "{\"prompt\": \"OG social card for a cybersecurity portfolio. Dark near-black background (#080d08), subtle cyan dot grid pattern, large bold white text left-aligned, cyan accent subtitle text below, shield and padlock icon, matrix green ambient glow in bottom-right corner. Clean professional terminal aesthetic. No people, no logos, no readable text.\", \"aspect_ratio\": \"16:9\", \"resolution\": \"2K\"}"
+```
+
+**Image 2 — Profile/Avatar Illustration (1:1):**
+```bash
+infsh app run google/gemini-3-1-flash-image-preview --input "{\"prompt\": \"Stylized abstract cybersecurity avatar for a developer portfolio. Dark background, geometric circuit-board patterns glowing in cyan and green, central shield icon with padlock, soft neon glow effect, no human face, no text, clean and professional.\", \"aspect_ratio\": \"1:1\", \"resolution\": \"2K\"}"
+```
+
+**Save outputs as:** `og-card.jpg` and `img/profile-illustration.png`
+
+| Tool | Status | What it did |
+|------|--------|-------------|
+| **Firecrawl** | ✅ Used | Scraped mattfarley.ca + lusion.co for design reference |
+| **UI UX Pro Max** | ✅ Used | Full design system audit — fonts, colors, style direction, UX checklist |
+| **Stitch** | ✅ Used | Generated Certifications + Education Timeline section layouts |
+| **Magic / 21st.dev** | ⏭️ Skipped | Skipped by user |
+| **Nano Banana 2** | ❌ Not available | `infsh` CLI not installed on this machine |
+| **Read · Edit · Write · Glob · Grep** | ✅ Used | All file reading, editing, and creation |
+
+---
+
+**Current build:** Plain HTML + CSS + Vanilla JavaScript. No framework, no build tool, no dependencies.
+
+| File | Purpose |
+|------|---------|
+| `index.html` | All markup — one single page |
+| `style.css` | All styles — ~1100 lines |
+| `app.js` | All interactions — ~400 lines |
+| `img/` | Profile photo only |
+
+**Fonts:** Google Fonts CDN (Poppins)
+**Icons:** Inline SVG (no icon library)
+**Form:** Formspree (free tier)
+**No npm, no bundler, no framework** — open `index.html` in a browser and it works.
+
+---
+
+## 9. WHAT'S BUILT vs. WHAT'S STILL MISSING
+
+### Currently built ✅
+
+- [x] Boot screen (terminal loading sequence)
+- [x] Dark mode toggle (saved to localStorage)
+- [x] Scroll progress bar
+- [x] Animated hero with typing effect + glitch
+- [x] About section with photo + stats counter
+- [x] 6 skill cards with scan line + tilt
+- [x] 6 project cards with shimmer + tilt
+- [x] Contact form (needs Formspree ID)
+- [x] Social links (GitHub, LinkedIn, TryHackMe)
+- [x] Scroll reveal on all elements
+- [x] Decrypt animation on section headings
+- [x] Active nav link tracking
+- [x] Responsive layout (mobile + tablet)
+- [x] Class of 2030 badge in About
+- [x] Footer with auto year
+
+### Still to add ⬜
+
+- [ ] **Resume download button** — Add to hero CTA and/or navbar. "Download CV" — highest priority for recruiters.
+- [ ] **Certifications section** — Show certs being pursued (CompTIA Security+, CEH, etc.) with status badges (In Progress / Earned). Add between Skills and Projects.
+- [ ] **Education / Timeline section** — Simple vertical timeline: Gannon University 2022–2030, relevant courses, clubs, achievements.
+- [ ] **TryHackMe stats badge** — Embeddable rank card from THM API. Shows rank, rooms completed, points. Already linked, just not displayed.
+- [ ] **"Open to internships" indicator** — Pulsing green dot + "Available for internships" text in hero. Signals to recruiters immediately.
+- [ ] **Favicon** — Currently showing browser default. Need a `<link rel="icon">` in `<head>`. A small `<LA/>` or shield icon. Formats: 32px / 48px / 180px (Apple touch).
+- [ ] **Open Graph tags** — Currently missing. Add `og:title`, `og:description`, `og:image` so LinkedIn/Discord/Twitter shows a preview card when the URL is shared.
+- [ ] **Back-to-top button** — Floating button that appears after scrolling past the hero. Small, fixed bottom-right.
+- [ ] **`prefers-reduced-motion` support** — All CSS transitions and JS animations should check for this media query and reduce/disable accordingly.
+- [ ] **Individual project repo links** — All 6 external link icons currently point to `href="#"`. Update each to the correct GitHub repo URL.
+- [ ] **Keyboard Easter egg** — Konami code (↑↑↓↓←→←→BA) triggers a Matrix rain animation or "root access granted" terminal message. Very on-brand.
+- [ ] **Loading="lazy"** on the profile photo `<img>` tag — small performance win.
+
+---
+
+## 10. SEO & META
+
+**Current state (what's in the `<head>`):**
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Lukman Al Afandi — Cybersecurity Student at Gannon University, Erie PA. Passionate about ethical hacking, network security, and building secure systems." />
+<title>Lukman Al Afandi | Cybersecurity Student</title>
+```
+
+**What needs to be added:**
+```html
+<!-- Open Graph (LinkedIn, Discord, Facebook preview) -->
+<meta property="og:title" content="Lukman Al Afandi | Cybersecurity Student" />
+<meta property="og:description" content="Cybersecurity student at Gannon University. Ethical hacker, CTF enthusiast, and builder of secure systems." />
+<meta property="og:image" content="https://yourdomain.com/og-card.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourdomain.com" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lukman Al Afandi | Cybersecurity Student" />
+<meta name="twitter:description" content="Ethical hacker, CTF enthusiast, network defender." />
+<meta name="twitter:image" content="https://yourdomain.com/og-card.jpg" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+```
+
+**OG image spec:** 1200×630px. `<LA/>` logo left side, name + title centered, dark background with subtle cyan grid pattern. Matches the site's dark mode aesthetic.
+
+---
+
+## 11. ACCESSIBILITY CHECKLIST
+
+| Item | Status |
+|------|--------|
+| All images have alt text | ✅ (profile photo has descriptive alt) |
+| Nav toggle has `aria-label` | ✅ |
+| Form fields have `<label>` elements | ✅ |
+| Social links have `aria-label` | ✅ |
+| Focus-visible styles on interactive elements | ⬜ Not explicitly set |
+| Skip-to-content link | ⬜ Missing |
+| `prefers-reduced-motion` honored | ⬜ Missing |
+| Landmark regions (`<main>`, `<header>`, `<footer>`) | ⬜ Missing — sections aren't wrapped in `<main>` |
+| Color contrast WCAG AA | ✅ Cyan on white passes |
+| Tap targets ≥ 44×44px | ✅ Buttons are large enough |
+
+---
+
+## 12. PERFORMANCE
+
+| Metric | Target |
+|--------|--------|
+| LCP | < 2.5s |
+| CLS | < 0.05 |
+
+**Current risks:**
+- Profile photo has no `loading="lazy"` or explicit `width`/`height` — potential CLS issue
+- Google Fonts loads synchronously via two `<link>` tags — consider `font-display: swap` (already in the Google Fonts URL via `&display=swap`)
+- No `srcset` on the profile image
+
+**What's already good:**
+- Zero npm dependencies — no bundle overhead
+- All CSS and JS is local (no CDN blocking)
+- Images folder only has 1 file
+- Inline SVG icons (no external icon requests)
+
+---
+
+## 13. FILE STRUCTURE
+
+```
+portfolio website/
+├── index.html          ← entire site, single page
+├── style.css           ← all styles (~1100 lines)
+├── app.js              ← all JS interactions (~400 lines)
+└── img/
+    └── 41f02081-...png ← profile photo (rename to profile.jpg)
+```
+
+**Recommended additions:**
+```
+portfolio website/
+├── index.html
+├── style.css
+├── app.js
+├── resume.pdf          ← downloadable CV (add ASAP)
+├── favicon-32.png
+├── favicon-48.png
+├── apple-touch-icon.png
+├── og-card.jpg         ← 1200×630 social preview image
+└── img/
+    └── profile.jpg     ← rename from the current UUID filename
+```
+
+---
+
+## 14. DEPLOYMENT CHECKLIST
+
+Before going live:
+
+- [ ] Replace `YOUR_FORM_ID` in `app.js` with real Formspree ID
+- [ ] Update all project external links from `href="#"` to actual URLs
+- [ ] Add resume.pdf and wire up a download button
+- [ ] Rename profile image from UUID to `profile.jpg`
+- [ ] Add favicon files
+- [ ] Add OG image and OG meta tags
+- [ ] Add `loading="lazy"` to profile `<img>`
+- [ ] Add `<main>` landmark wrapping all sections
+- [ ] Add skip-to-content link
+- [ ] Test dark mode on iOS Safari (backdrop-filter support)
+- [ ] Test form submission end-to-end
+- [ ] Run Lighthouse audit and fix any red flags
+
+**Recommended host:** GitHub Pages (free, perfect for a portfolio). Push the folder to a repo named `username.github.io` and it's live automatically.
+
+---
+
+*Brief version 1.0 — reflects the site as built.*
+*Items marked ⬜ are enhancements. Items marked [insert] need Lukman's input.*

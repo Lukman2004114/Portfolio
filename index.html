@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lukman Al Afandi — Cybersecurity Student at Gannon University, Erie PA. Passionate about ethical hacking, network security, and building secure systems." />
+    <title>Lukman Al Afandi | Cybersecurity Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+      <div class="boot-inner">
+        <div class="boot-logo">&lt;LA/&gt;</div>
+        <div id="boot-lines"></div>
+      </div>
+    </div>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>LA<span class="logo-bracket">/&gt;</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certs" class="nav-link">Certs</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow reveal">Hello, I'm</p>
+        <h1 class="hero-title reveal">
+          Lukman<br /><span class="accent-text">Al Afandi</span>
+        </h1>
+        <p class="hero-role reveal">
+          <span class="role-badge">Cybersecurity Student</span>
+        </p>
+        <p class="hero-location reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Erie, PA &mdash; Gannon University
+        </p>
+        <p class="hero-desc reveal">
+          Passionate about ethical hacking, network defense,<br class="hide-mobile" />
+          and building secure digital systems.
+        </p>
+        <div class="available-badge reveal">
+          <span class="available-dot"></span>
+          Available for Internships
+        </div>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          <!-- Place resume.pdf in the same folder as index.html -->
+          <a href="resume.pdf" class="btn btn-ghost" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+        <div class="hero-scroll reveal">
+          <span>Scroll to explore</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <div class="avatar-wrap">
+              <div class="avatar-placeholder">
+                <img src="img/41f02081-5651-4bbd-bfb5-c3af1d10c1d9.png" alt="Lukman Al Afandi" />
+              </div>
+              <div class="avatar-ring"></div>
+            </div>
+          </div>
+          <div class="about-text">
+            <p class="section-label reveal">About Me</p>
+            <h2 class="section-title reveal">Hi, I'm Lukman.<br />Nice to meet you.</h2>
+            <p class="about-desc reveal">
+              I'm a Cybersecurity student at <strong>Gannon University</strong> in Erie, PA <span class="grad-badge">Class of 2030</span>,
+              with a deep passion for ethical hacking, penetration testing, and digital forensics.
+              I love breaking things apart to understand how they work — and then building them back stronger.
+            </p>
+            <p class="about-desc reveal">
+              I'm constantly sharpening my skills through hands-on labs, CTF challenges, and real-world
+              security research. My focus areas include Network Security, Web Exploitation,
+              Malware Analysis, and Cryptography.
+            </p>
+            <div class="about-stats reveal">
+              <div class="stat">
+                <span class="stat-num">15+</span>
+                <span class="stat-label">CTF Challenges</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">5+</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">Certs Pursuing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         EDUCATION
+    ========================================================== -->
+    <section class="section education" id="education">
+      <div class="container">
+        <p class="section-label reveal">Academic Background</p>
+        <h2 class="section-title reveal">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-school">Gannon University</h3>
+                  <p class="timeline-degree">B.S. Cybersecurity</p>
+                  <p class="timeline-meta">Erie, PA &nbsp;&middot;&nbsp; 2022 &ndash; Expected 2030</p>
+                </div>
+                <span class="grad-badge">Class of 2030</span>
+              </div>
+              <p class="timeline-label">Relevant Coursework</p>
+              <div class="timeline-tags">
+                <span>Network Security</span>
+                <span>Digital Forensics</span>
+                <span>Ethical Hacking</span>
+                <span>Cryptography</span>
+                <span>Systems Security</span>
+                <span>Malware Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <p class="section-label center reveal">What I Know</p>
+        <h2 class="section-title center reveal decrypt">My Skills</h2>
+        <p class="section-sub center reveal">
+          A collection of tools, technologies, and concepts I work with.
+        </p>
+        <div class="skills-grid">
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="skill-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CERTIFICATIONS
+    ========================================================== -->
+    <section class="section certs" id="certs">
+      <div class="container">
+        <p class="section-label center reveal">Credentials</p>
+        <h2 class="section-title center reveal">Certifications</h2>
+        <p class="section-sub center reveal">
+          Pursuing industry-standard certifications to validate hands-on skills.
+        </p>
+        <div class="certs-grid">
+
+          <div class="cert-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="cert-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="cert-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="cert-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJECTS
+    ========================================================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <p class="section-label center reveal">My Work</p>
+        <h2 class="section-title center reveal decrypt">Recent Projects</h2>
+        <p class="section-sub center reveal">
+          A few things I've built and explored. Want to see more?
+        </p>
+        <div class="projects-grid">
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="project-card cert-empty reveal">
+            <div class="cert-empty-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <p class="section-label center">Let's Connect</p>
+          <h2 class="section-title center decrypt">Interested in collaborating?</h2>
+          <p class="contact-desc center">
+            I'm always open to discussing cybersecurity projects, internship opportunities,<br class="hide-mobile" />
+            or just talking about the latest vulnerabilities.
+          </p>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+            </div>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary btn-lg" id="formSubmit">Send Message</button>
+              <p class="form-status" id="formStatus"></p>
+            </div>
+          </form>
+          <div class="contact-socials">
+            <a href="https://github.com/Lukman2004114" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/lukman-al-afandi-2539123b3" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://tryhackme.com/p/luqmanalafande" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TryHackMe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>TryHackMe</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a href="#hero" class="footer-logo">
+            <span class="logo-bracket">&lt;</span>LA<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-copy">
+            &copy; <span id="year"></span> Lukman Al Afandi. All rights reserved.
+          </p>
+          <p class="footer-made">Made with <span class="heart">&#9829;</span> and curiosity.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
