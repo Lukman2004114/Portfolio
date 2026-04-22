@@ -459,3 +459,35 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 }
+
+// -------------------------------------------------------
+// 17. HERO PARALLAX — bg grid + glow drift on scroll
+// -------------------------------------------------------
+(function heroParallax() {
+  const grid = document.querySelector('.hero-bg-grid');
+  const glow = document.querySelector('.hero-glow');
+  if (!grid || !glow) return;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    grid.style.transform = `translateY(${y * 0.35}px)`;
+    glow.style.transform = `translateX(-50%) translateY(${y * 0.2}px)`;
+  }, { passive: true });
+})();
+
+
+// -------------------------------------------------------
+// 19. BACK TO TOP BUTTON
+// -------------------------------------------------------
+(function backToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
