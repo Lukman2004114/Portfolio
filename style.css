@@ -151,6 +151,7 @@ img, svg {
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
   border: 2px solid transparent;
+  will-change: transform;
 }
 
 .btn-primary {
@@ -188,13 +189,13 @@ img, svg {
 ============================================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(28px) translateX(var(--slide-x, 0px));
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateX(0);
 }
 
 /* Stagger delay for children in groups */

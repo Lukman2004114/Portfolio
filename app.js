@@ -195,11 +195,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   if (!badge) return;
 
   const roles = [
-    'Cybersecurity Student',
-    'Ethical Hacker',
-    'CTF Enthusiast',
-    'Network Defender',
-    'Penetration Tester'
+    'Cybersecurity Student'
   ];
 
   // Restructure badge HTML
@@ -401,6 +397,65 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
+    });
+  });
+}
+
+// -------------------------------------------------------
+// 14. GLITCH ON HOVER — accent name text
+// -------------------------------------------------------
+(function glitchOnHover() {
+  const target = document.querySelector('.accent-text');
+  if (!target) return;
+
+  let cooldown = false;
+
+  target.addEventListener('mouseenter', () => {
+    if (cooldown) return;
+    cooldown = true;
+    target.classList.add('glitch-active');
+    setTimeout(() => {
+      target.classList.remove('glitch-active');
+      // short cooldown so it doesn't spam
+      setTimeout(() => { cooldown = false; }, 400);
+    }, 1600);
+  });
+})();
+
+// -------------------------------------------------------
+// 15. STAGGERED CARD REVEAL — alternating slide directions
+// -------------------------------------------------------
+(function staggeredReveal() {
+  const grids = document.querySelectorAll('.skills-grid, .projects-grid, .certs-grid');
+
+  grids.forEach(grid => {
+    const cards = Array.from(grid.querySelectorAll('.reveal'));
+    cards.forEach((card, i) => {
+      // Alternate: odd cards slide from left, even from right
+      card.style.setProperty('--slide-x', i % 2 === 0 ? '-30px' : '30px');
+      card.style.transitionDelay = (i * 0.1) + 's';
+    });
+  });
+})();
+
+// -------------------------------------------------------
+// 16. MAGNETIC BUTTONS — cursor attraction effect (desktop)
+// -------------------------------------------------------
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect   = btn.getBoundingClientRect();
+      const cx     = rect.left + rect.width  / 2;
+      const cy     = rect.top  + rect.height / 2;
+      const dx     = (e.clientX - cx) * 0.3;
+      const dy     = (e.clientY - cy) * 0.3;
+      btn.style.transform   = `translate(${dx}px, ${dy}px)`;
+      btn.style.transition  = 'transform 0.15s ease';
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform  = '';
+      btn.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     });
   });
 }
