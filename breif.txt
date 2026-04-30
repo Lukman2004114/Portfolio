@@ -215,14 +215,16 @@ Terminal font, green text on near-black background. Fades out after ~3 seconds. 
 
 ### Terminal Typing Effect
 
-The `.role-badge` in the hero cycles through 5 roles:
+The `.role-badge` in the hero cycles through roles. Types at 85ms/char, deletes at 50ms/char. 2.4s pause when fully typed. Prefixed with `> ` terminal prompt. Blinking cursor `_`.
+
+**Target roles (5):**
 1. Cybersecurity Student
 2. Ethical Hacker
 3. CTF Enthusiast
 4. Network Defender
 5. Penetration Tester
 
-Types at 85ms/char, deletes at 50ms/char. 2.4s pause when fully typed. Prefixed with `> ` terminal prompt. Blinking cursor `_`.
+**⚠️ Current state in app.js:** `roles` array only contains 1 item (`'Cybersecurity Student'`). It types and deletes the same role on loop. Update the array to all 5 roles to match the spec.
 
 ### Dark Mode
 
@@ -235,10 +237,12 @@ Toggle button in navbar (moon/sun icon). Preference saved to `localStorage`. App
 ### Section order
 1. Hero
 2. About
-3. Skills
-4. Projects
-5. Contact
-6. Footer
+3. Education
+4. Skills
+5. Certifications
+6. Projects
+7. Contact
+8. Footer
 
 ---
 
@@ -252,7 +256,8 @@ Toggle button in navbar (moon/sun icon). Preference saved to `localStorage`. App
 - Role badge: terminal typing effect (see above)
 - Location line: pin icon + "Erie, PA — Gannon University"
 - Description: 1–2 lines
-- 2 CTA buttons: "View My Work" (primary, links to #projects) + "Get In Touch" (outline, links to #contact)
+- **"Available for Internships" badge** — pulsing green dot + text, pill style, above CTA buttons ✅ built
+- **3 CTA buttons:** "View My Work" (primary) · "Get In Touch" (outline) · "Download CV" (ghost, downloads resume.pdf) ✅ built
 - Scroll indicator: "Scroll to explore" + animated pulsing vertical line
 
 **Animations:** Reveal fade+rise on each element, staggered by natural DOM order.
@@ -366,7 +371,7 @@ Toggle button in navbar (moon/sun icon). Preference saved to `localStorage`. App
 
 **Items:**
 - Left: `<LA/>` logo
-- Center: About · Skills · Projects · Contact
+- Center: About · Education · Skills · Certs · Projects · Contact
 - Right: Dark mode toggle (moon/sun icon) + hamburger (mobile)
 
 **Active state:** Cyan underline on current section's nav link (tracked by IntersectionObserver).
@@ -549,9 +554,12 @@ infsh app run google/gemini-3-1-flash-image-preview --input "{\"prompt\": \"Styl
 | File | Purpose |
 |------|---------|
 | `index.html` | All markup — one single page |
-| `style.css` | All styles — ~1100 lines |
-| `app.js` | All interactions — ~400 lines |
+| `style.css` | All styles — ~1633 lines |
+| `app.js` | All interactions — ~494 lines |
 | `img/` | Profile photo only |
+
+**JS animation modules in app.js (19 total):**
+0. Boot screen · 0b. Dark mode · 1. Footer year · 2. Navbar scroll+mobile · 3. Scroll reveal · 4. Active nav link · 5. Smooth scroll · 6. Cursor glow · 7. Terminal typing · 8. Glitch on load · 9. Decrypt text · 10. Counting numbers · 11. Scroll progress bar · 12. Contact form · 13. Card tilt · 14. Glitch on hover · 15. Staggered card reveal (alternating ±30px slide) · 16. Magnetic buttons · 17. Hero parallax · 19. Back to top
 
 **Fonts:** Google Fonts CDN (Poppins)
 **Icons:** Inline SVG (no icon library)
@@ -568,32 +576,43 @@ infsh app run google/gemini-3-1-flash-image-preview --input "{\"prompt\": \"Styl
 - [x] Dark mode toggle (saved to localStorage)
 - [x] Scroll progress bar
 - [x] Animated hero with typing effect + glitch
+- [x] "Available for Internships" pulsing badge in hero
+- [x] Download CV button in hero (ghost style, links to resume.pdf)
 - [x] About section with photo + stats counter
-- [x] 6 skill cards with scan line + tilt
-- [x] 6 project cards with shimmer + tilt
+- [x] Skills section structure — 6 cards, **placeholder "Coming soon"** content
+- [x] Education section — vertical timeline, Gannon University, relevant courses ✅ fully populated
+- [x] Certifications section structure — 4 cards, **placeholder "Coming soon"** content
+- [x] Projects section structure — 6 cards, **placeholder "Coming soon"** content
 - [x] Contact form (needs Formspree ID)
 - [x] Social links (GitHub, LinkedIn, TryHackMe)
-- [x] Scroll reveal on all elements
+- [x] Scroll reveal on all elements (with alternating left/right slide directions on card grids)
 - [x] Decrypt animation on section headings
-- [x] Active nav link tracking
+- [x] Active nav link tracking (About · Education · Skills · Certs · Projects · Contact)
 - [x] Responsive layout (mobile + tablet)
-- [x] Class of 2030 badge in About
+- [x] Class of 2030 badge in About + Education
 - [x] Footer with auto year
+- [x] Back-to-top floating button (appears after 400px scroll)
+- [x] Magnetic button hover effect (cursor attraction)
+- [x] Hero parallax (dot grid + glow drift on scroll)
+- [x] Glitch-on-hover on "Al Afandi" accent text
 
-### Still to add ⬜
+### Still to do ⬜
 
-- [ ] **Resume download button** — Add to hero CTA and/or navbar. "Download CV" — highest priority for recruiters.
-- [ ] **Certifications section** — Show certs being pursued (CompTIA Security+, CEH, etc.) with status badges (In Progress / Earned). Add between Skills and Projects.
-- [ ] **Education / Timeline section** — Simple vertical timeline: Gannon University 2022–2030, relevant courses, clubs, achievements.
-- [ ] **TryHackMe stats badge** — Embeddable rank card from THM API. Shows rank, rooms completed, points. Already linked, just not displayed.
-- [ ] **"Open to internships" indicator** — Pulsing green dot + "Available for internships" text in hero. Signals to recruiters immediately.
-- [ ] **Favicon** — Currently showing browser default. Need a `<link rel="icon">` in `<head>`. A small `<LA/>` or shield icon. Formats: 32px / 48px / 180px (Apple touch).
-- [ ] **Open Graph tags** — Currently missing. Add `og:title`, `og:description`, `og:image` so LinkedIn/Discord/Twitter shows a preview card when the URL is shared.
-- [ ] **Back-to-top button** — Floating button that appears after scrolling past the hero. Small, fixed bottom-right.
-- [ ] **`prefers-reduced-motion` support** — All CSS transitions and JS animations should check for this media query and reduce/disable accordingly.
+**Content (highest priority — these are placeholders right now):**
+- [ ] **Skill cards** — Replace the 6 "Coming soon" placeholders with actual cards. See Section 3 spec (Network Security, Ethical Hacking, Scripting, Digital Forensics, Web Security, Cryptography).
+- [ ] **Project cards** — Replace the 6 "Coming soon" placeholders with actual cards. See Section 4 spec for content + GitHub links.
+- [ ] **Certification cards** — Replace the 4 "Coming soon" placeholders with actual cert cards. Use cert-card HTML structure with cert-status, cert-progress-fill. Cards: CompTIA Security+ (60%), CEH (35%), TryHackMe Top 1% (earned), Google Cybersecurity Cert (earned).
+- [ ] **Typing effect roles** — `app.js` line ~198: `roles` array only has 1 item. Add the other 4 roles: `'Ethical Hacker'`, `'CTF Enthusiast'`, `'Network Defender'`, `'Penetration Tester'`.
 - [ ] **Individual project repo links** — All 6 external link icons currently point to `href="#"`. Update each to the correct GitHub repo URL.
-- [ ] **Keyboard Easter egg** — Konami code (↑↑↓↓←→←→BA) triggers a Matrix rain animation or "root access granted" terminal message. Very on-brand.
-- [ ] **Loading="lazy"** on the profile photo `<img>` tag — small performance win.
+- [ ] **Resume PDF** — Place `resume.pdf` in the root folder. The Download CV button already links to it.
+
+**Features still missing:**
+- [ ] **Favicon** — Currently showing browser default. Need a `<link rel="icon">` in `<head>`. A small `<LA/>` or shield icon. Formats: 32px / 48px / 180px (Apple touch).
+- [ ] **Open Graph tags** — Add `og:title`, `og:description`, `og:image` so LinkedIn/Discord/Twitter shows a preview card when the URL is shared.
+- [ ] **`prefers-reduced-motion` support** — All CSS transitions and JS animations should check for this media query.
+- [ ] **TryHackMe stats badge** — Embeddable rank card from THM API.
+- [ ] **Keyboard Easter egg** — Konami code triggers Matrix rain or "root access granted" terminal message.
+- [ ] **`loading="lazy"`** on the profile photo `<img>` tag — small performance win.
 
 ---
 
@@ -701,11 +720,13 @@ portfolio website/
 
 Before going live:
 
+- [ ] Fill in all "Coming soon" placeholder cards (Skills × 6, Projects × 6, Certs × 4)
+- [ ] Fix typing effect — add all 5 roles to the `roles` array in app.js
 - [ ] Replace `YOUR_FORM_ID` in `app.js` with real Formspree ID
 - [ ] Update all project external links from `href="#"` to actual URLs
-- [ ] Add resume.pdf and wire up a download button
-- [ ] Rename profile image from UUID to `profile.jpg`
-- [ ] Add favicon files
+- [ ] Add `resume.pdf` to the root folder (Download CV button already wired up)
+- [ ] Rename profile image from UUID to `profile.jpg` and update `src` in index.html
+- [ ] Add favicon files + `<link rel="icon">` tags
 - [ ] Add OG image and OG meta tags
 - [ ] Add `loading="lazy"` to profile `<img>`
 - [ ] Add `<main>` landmark wrapping all sections
